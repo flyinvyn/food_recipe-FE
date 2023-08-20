@@ -13,6 +13,7 @@ import {
   Center,
   VStack,
   Button,
+  useNativeBase,
 } from "native-base";
 import {
   FlatList,
@@ -20,15 +21,18 @@ import {
   StyleSheet,
   useWindowDimensions,
   Pressable,
+  TouchableOpacity,
 } from "react-native";
 import FeatherIcon from "react-native-vector-icons/Feather";
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useDispatch } from "react-redux";
-import { deleteRecipeActions } from "./config/redux/action/recipeAction";
 import UpdateModal from "./components/updateModal";
+import { deleteRecipeActions } from "./config/redux/action/recipeAction";
+import { useNavigation } from "expo-router";
 
-const MyRecipe = () => {
+const Home = () => {
+    const navigation = useNavigation()
   const dispatch = useDispatch();
   const { width } = useWindowDimensions();
   const SIZE = width * 0.94;
@@ -49,19 +53,26 @@ const MyRecipe = () => {
       .catch((error) => console.log(error));
   };
   const handleDelete = (recipes_id) => {
-    // axios.delete(`http://192.168.18.6:7474/recipes/${recipes_id}`).then(() => {
+    // axios.delete(`http://192.168.1.6:7474/recipes/${recipes_id}`).then(() => {
     //   alert("Recipe Delete");
     dispatch(deleteRecipeActions(recipes_id));
     getData();
   };
   return (
-    <View style={{flexDirection:'row'}}>
+    <View>
+        <View style={{ flexDirection: "row", marginTop: 40, alignItems: "center" }}>
+                <TouchableOpacity
+                    onPress={() => navigation.navigate('Profiles')}
+                    style={{ backgroundColor: "#F8F8FA", borderRadius: 16, width: 48, height: 48 }}>
+                    {<Icon as={<FeatherIcon name="chevron-left" />} size={7} style={{ marginLeft: "auto", marginRight: "auto", marginTop: 10 }} />}
+                </TouchableOpacity>
+                <Text style={{ marginHorizontal:70, fontSize: 25, fontWeight: "700", color: "#EFC81A" }}>My Recipe</Text>
+            </View>
       <Container maxWidth={SIZE}>
         <FlatList
           data={data}
-          style={{ marginTop: 60 }}
           renderItem={({ item }) => (
-            <View mt={10}>
+            <View mt={5}>
               <HStack>
                 <Image
                   // source={{ uri: item.recipes_photo }}
@@ -75,11 +86,12 @@ const MyRecipe = () => {
                   style={styles.image}
                   alt="image"
                 />
-                <VStack paddingTop={1} style={{flexDirection:'row', alignItems:'center'}}>
+                <VStack style={{flexDirection:'row',alignItems:'center'}} paddingTop={1}>
                   <Text
                     style={{
                       fontWeight: "bold",
                       fontSize: 18,
+                      width:100
                     }}
                   >
                     {item.recipes_title}
@@ -95,11 +107,11 @@ const MyRecipe = () => {
                     />
 
                     <Button
-                      style={{ width: 50,height:50,borderRadius:10, backgroundColor:'red' }}
+                      style={{ width: 50, backgroundColor: "red" }}
                       onPress={() => handleDelete(item.recipes_id)}
                       ml={3}
                     >
-                      <FeatherIcon name="trash-2" size={25} color={"white"} />
+                      <FeatherIcon name="trash-2" size={20} color={"white"} />
                     </Button>
                   </HStack>
                 </VStack>
@@ -114,8 +126,8 @@ const MyRecipe = () => {
 
 const styles = StyleSheet.create({
   image: {
-    width: 100,
     borderRadius: 20,
+    width: 100,
     height: 100,
     marginRight: 20,
   },
@@ -135,7 +147,7 @@ export default () => {
   return (
     <NativeBaseProvider>
       <View mt={6} flex={1} px="3">
-        <MyRecipe />
+        <Home />
       </View>
     </NativeBaseProvider>
   );

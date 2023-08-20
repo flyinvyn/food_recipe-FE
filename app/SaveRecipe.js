@@ -10,7 +10,7 @@ const SaveRecipe = () => {
         <View style={{ flex: 1, marginTop: 20, paddingLeft: 20 }}>
             <View style={{ flexDirection: "row", marginTop: 40, alignItems: "center" }}>
                 <TouchableOpacity
-                    onPress={() => navigation.navigate('Profiles ')}
+                    onPress={() => navigation.navigate('Profiles')}
                     style={{ backgroundColor: "#F8F8FA", borderRadius: 16, width: 48, height: 48 }}>
                     {<Icon as={<FeatherIcon name="chevron-left" />} size={7} style={{ marginLeft: "auto", marginRight: "auto", marginTop: 10 }} />}
                 </TouchableOpacity>

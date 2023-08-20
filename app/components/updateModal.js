@@ -44,7 +44,7 @@ const UpdateModal = ({
   const [title, setTitle] = useState(recipes_title);
   const [description, setDescription] = useState(recipes_ingredients);
   const [video, setVideo] = useState(recipes_video);
-  const [photo, setPhoto] = useState(null)
+  const [image, setImage] = useState(null);
 
   const updateRecipe = () => {
     dispatch(
@@ -52,7 +52,7 @@ const UpdateModal = ({
         title,
         description,
         video,
-        recipes_photo,
+        image,
         recipes_id,
         setModalVisible,
         getData
@@ -61,24 +61,22 @@ const UpdateModal = ({
   };
 
   const pickImage = async () => {
+    // No permissions request is necessary for launching the image library
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
       allowsEditing: true,
       aspect: [4, 3],
       quality: 1,
     });
-
-    console.log(result);
-
     if (!result.canceled) {
-      console.log(result.assets[0].uri);
+      setImage(result.assets[0].uri);
     }
   };
   return (
     <View>
       <Modal
         animationType="slide"
-        transparent={false}
+        transparent={true}
         visible={modalVisible}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
@@ -98,16 +96,15 @@ const UpdateModal = ({
           <Input value={video} onChangeText={(value) => setVideo(value)} />
           <Text mt={3}>Picture</Text>
           <Button mt={3} onPress={pickImage} backgroundColor={"transparent"}>
-            <FeatherIcon name="camera" size={25} color={"black"} />
+            <FeatherIcon name="camera" size={20} color={"black"} />
           </Button>
-          {photo && (
+          {image && (
                 <Image
-                  source={{ uri: photo }}
+                  source={{ uri: image }}
                   style={{width:100,height:100}}
-                  alt="photo"
+                  alt="image"
                 />
               )}
-
           <HStack mt={3}>
             <Button
               style={[styles.button, styles.buttonClose]}
@@ -120,8 +117,8 @@ const UpdateModal = ({
           </HStack>
         </View>
       </Modal>
-      <Button style={{ width: 50,height:50,borderRadius:10, backgroundColor:'blue',marginLeft:70 }} onPress={() => setModalVisible(true)}>
-        <FeatherIcon name="edit" size={25} color={"white"} />
+      <Button style={{ width: 50, backgroundColor:'blue',marginLeft:25 }} onPress={() => setModalVisible(true)}>
+        <FeatherIcon name="edit" size={20} color={"white"} />
       </Button>
     </View>
   );

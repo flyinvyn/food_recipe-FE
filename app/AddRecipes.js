@@ -50,10 +50,10 @@ const AddRecipe = () => {
         <Text style={{ marginLeft: "auto", marginRight: "auto", fontSize: 25, fontWeight: "700", color: "#EFC81A", marginVertical: 20 }}>Add Your Recipe</Text>
       </View>
       <Box mt={30}>
-        <Input backgroundColor="#fff" borderRadius={10} w={350} h={60} InputLeftElement={<Icon as={<FeatherIcon name="book-open" />} size={7} ml="5" color="muted.500" />} placeholder="Title" onChangeText={setRecipes_title} />
+        <Input backgroundColor="#fff" borderRadius={10} w={350} h={60} InputLeftElement={<Icon as={<FeatherIcon name="book-open" />} size={7} ml="5" color="muted.500" />} placeholder="Title" value={recipes_title} onChangeText={setRecipes_title} />
       </Box>
       <Box mt={18}>
-        <Input backgroundColor="#fff" borderRadius={10} w={350} h={200} style={{ paddingBottom: 160 }} placeholder="Description" onChangeText={setRecipes_ingredients} />
+        <Input backgroundColor="#fff" borderRadius={10} w={350} h={200} style={{ paddingBottom: 160 }} placeholder="Description" value={recipes_ingredients} onChangeText={setRecipes_ingredients} />
       </Box>
       <Box mt={18}>
         <Input backgroundColor="#fff" borderRadius={10} w={350} h={60} InputLeftElement={<Icon as={<FeatherIcon name="video" />} size={7} ml="5" color="muted.500" />} placeholder="Masukan Url Video" value={recipes_video} onChangeText={setRecipes_video} />

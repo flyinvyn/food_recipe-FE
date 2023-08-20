@@ -58,7 +58,7 @@ export const updateRecipeActions =
         });
       }
       const recipes = await axios.put(
-        `http://192.168.18.6:7474/recipes${recipes_id}`,
+        `http://192.168.18.6:7474/recipes/${recipes_id}`,
         formData,
         {
           headers: {

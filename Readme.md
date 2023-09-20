@@ -146,7 +146,7 @@ Contributions are what make the open source community such an amazing place to b
 
 ## Related Project
 
-:rocket: [`Backend`](https://github.com/flyinvyn/be-Blanja)
+:rocket: [`Backend`](https://github.com/flyinvyn/food_recipe-Be)
 
 :rocket: [`Frontend`](https://github.com/flyinvyn/food_recipe-FE)
 

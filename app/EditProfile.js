@@ -11,7 +11,6 @@ const EditProfile = () => {
     const navigation = useNavigation();
 
     const [users_photo, setUsers_photo] = useState(null);
-    const [users_name, setUsers_name] = useState('');
 
     const pickImage = async () => {
         let result = await ImagePicker.launchImageLibraryAsync({
@@ -28,9 +27,9 @@ const EditProfile = () => {
       const handleSubmit = async () => {
     try {
       const users_id = await AsyncStorage.getItem('id')
-      console.log(users_id);
+      const name = await AsyncStorage.getItem('name')
       const formData = new FormData();
-      formData.append('users_name',users_name)
+      formData.append('users_name',name)
       if(users_photo){
         formData.append('users_photo', {
           uri: users_photo,
@@ -45,6 +44,7 @@ const EditProfile = () => {
         },
       })
       alert('Succes')
+      setUsers_photo(null)
     } catch (error) {
       console.log(error);
     }
@@ -74,12 +74,12 @@ const EditProfile = () => {
                 />
               )}
             </View>
-            <View>
+            {/* <View>
                 <TouchableOpacity>
                     <Text style={styles.touch}>Change Password</Text>
                     <View style={{ backgroundColor: "#3F3A3A", width: "95%", height: 1, marginTop: 10 }}></View>
                 </TouchableOpacity>
-            </View>
+            </View> */}
             <View>
                 <TouchableOpacity onPress={()=> handleSubmit()}>
                     <Text style={styles.touch}>Save</Text>

@@ -78,34 +78,14 @@ export const updateRecipeActions =
     }
   };
 
-// export const updateRecipeActions =
-//   (data, setModalVisible, recipes_id) => async (dispatch) => {
-//     try {
-//       const recipes = await axios.put(
-//         `http://192.168.18.6:7474/recipes${recipes_id}``http://192.168.18.6:7474/recipes${recipes_id}`,
-//         data
-//       );
-//       if (recipes.data.statusCode === 200) {
-//         setModalVisible(false);
-//         alert("Update Recipe Success");
-//       }
-//       const result = recipes.data.data;
-//       dispatch({ type: "UPDATE_RECIPE", payload: result });
-//     } catch (err) {
-//       console.error(err.message);
-//     }
-//   };
-
 export const deleteRecipeActions = (recipes_id) => async (dispatch) => {
   try {
     const recipes = await axios.delete(
       `http://192.168.18.6:7474/recipes/${recipes_id}`
     );
-
-    alert("Delete Recipe Success");
-
     const result = recipes.data.data;
     dispatch({ type: "DELETE_RECIPE", payload: result });
+    alert("Delete Recipe Success");
   } catch (err) {
     console.error(err.message);
   }

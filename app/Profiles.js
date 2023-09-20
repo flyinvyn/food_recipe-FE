@@ -7,24 +7,18 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 
-const ProfImage = ({photo, name}) => {
-    return (
-        <View style={{ justifyContent: "center", alignItems: "center" }}>
-            <Image
-            source={{ uri: `${photo}` }} alt='Profile'
-            style={{width:120,height:120,borderRadius:100}}
-            />
-            <Text style={{ color: "#FFFFFF", fontSize: 22, fontWeight: "700", marginTop: 17 }}>{name}</Text>
-        </View>
-    )
-}
+// const ProfImage = ({photo, name}) => {
+//     return (
+
+//     )
+// }
 
 const Profile = () => {
     const navigation = useNavigation();
-    const [data,setData] = useState([]);
+    const [data, setData] = useState([]);
     useEffect(() => {
         getData()
-    },[])
+    }, [])
 
     const getData = async () => {
         const users_id = await AsyncStorage.getItem('id')
@@ -48,16 +42,29 @@ const Profile = () => {
     return (
         <View style={{ flex: 1 }}>
             <View style={styles.container}>
-            <View style={{ flexDirection: "row", marginTop: 40, alignItems: "center" }}>
-                <TouchableOpacity
-                    onPress={() => navigation.navigate('Landing')}
-                    style={{ borderRadius: 16, width: 48, height: 48,marginLeft:20 }}>
-                    {<Icon as={<FeatherIcon name="chevron-left" />} size={7} style={{ marginLeft: "auto", marginRight: "auto", marginTop: 10 }} />}
-                </TouchableOpacity>
-            </View>
-                {data.map(item => {
+                <View style={{ flexDirection: "row", marginTop: 40, alignItems: "center" }}>
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate('Landing')}
+                        style={{ borderRadius: 16, width: 48, height: 48, marginLeft: 20 }}>
+                        {<Icon as={<FeatherIcon name="chevron-left" />} size={7} style={{ marginLeft: "auto", marginRight: "auto", marginTop: 10 }} />}
+                    </TouchableOpacity>
+                </View>
+                {data.map((item, index) => (
+                    <View key={index} style={{ justifyContent: "center", alignItems: "center" }}>
+                        <Image
+                            source={item.users_photo === "null" ||
+                            item.users_photo === null ||
+                            item.users_photo === ""
+                              ? require("../assets/img/noimage.png")
+                              : { uri: item.users_photo }} alt='Profile'
+                            style={{ width: 140, height: 140, borderRadius: 100 }}
+                        />
+                        <Text style={{ color: "#FFFFFF", fontSize: 22, fontWeight: "700", marginTop: 10 }}>{item.users_name}</Text>
+                    </View>
+                ))}
+                {/* {data.map(item => {
                     return <ProfImage key={item.users_id} photo={item.users_photo} name={item.users_name} />
-                })}
+                })} */}
                 <View style={{ justifyContent: "center", alignItems: "center" }}>
                     <View style={styles.section}>
                         <View style={styles.wrapper}>
@@ -115,7 +122,7 @@ export default () => {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: "#EFC81A",
-        height: 310
+        height: 350
     },
     section: {
         backgroundColor: "#FFFFFF",

@@ -5,15 +5,30 @@ import { MaterialIcons } from "@expo/vector-icons";
 import FeatherIcon from "react-native-vector-icons/Feather";
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import {  useNavigation } from '@react-navigation/native';
 import { Link } from 'expo-router';
+import { useEffect } from 'react';
 
 const Login = () => {
     const navigation = useNavigation();
     const [show, setShow] = React.useState(false);
     const [users_email, setUsers_email] = useState('');
     const [users_confirmpassword, setUsers_confirmpassword] = useState('');
+
+    useEffect(() => {
+        const cekToken = async () =>{
+            try {
+                const userToken = await AsyncStorage.getItem('token');
+                if(userToken){
+                    navigation.navigate("Landing")
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        cekToken();
+      }, [navigation]);
+    
 
     const submit = async () => {
         try {
@@ -30,6 +45,7 @@ const Login = () => {
                 navigation.navigate('Landing')
                 await AsyncStorage.setItem('token', res.data.data.token_user)
                 await AsyncStorage.setItem('id', res.data.data.users_id)
+                await AsyncStorage.setItem('name', res.data.data.users_name)
             }
         } catch (error) {
             alert(error);

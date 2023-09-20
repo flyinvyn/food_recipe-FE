@@ -68,65 +68,65 @@ npm install / npm i
 ## Screenshots
 
 <table>
- <tr>
-    <td><img width="350px" src="https://cdn.discordapp.com/attachments/1151516779068260435/1154092254378594344/register.png"  border="0" border="0" alt="1" /></td>
-    <td> <img width="350px" src="https://cdn.discordapp.com/attachments/1151516779068260435/1154092254135320716/login.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
+ <tr align=center>
+    <td><img width="200px" src="https://cdn.discordapp.com/attachments/1151516779068260435/1154092254378594344/register.png"  border="0" border="0" alt="1" /></td>
+    <td> <img width="200px" src="https://cdn.discordapp.com/attachments/1151516779068260435/1154092254135320716/login.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
   </tr>
-   <tr>
+   <tr align=center>
     <td>Register</td>
     <td>Login</td>
   </tr>
 
 
- <tr>
-    <td><img width="350px" src="https://cdn.discordapp.com/attachments/1151516779068260435/1154092189379461200/home.png"  border="0" border="0" alt="1" /></td>
-    <td> <img width="350px" src="https://cdn.discordapp.com/attachments/1151516779068260435/1154092047586836500/add.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
+ <tr align=center>
+    <td><img width="200px" src="https://cdn.discordapp.com/attachments/1151516779068260435/1154092189379461200/home.png"  border="0" border="0" alt="1" /></td>
+    <td> <img width="200px" src="https://cdn.discordapp.com/attachments/1151516779068260435/1154092047586836500/add.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
   </tr>
-   <tr>
+   <tr align=center>
     <td>Home page</td>
     <td>Add Recipe</td>
   </tr>
 
- <tr>
-    <td><img width="350px" src="https://cdn.discordapp.com/attachments/1151516779068260435/1154092255469109309/profile.png"  border="0" border="0" alt="1" /></td>
-    <td> <img width="350px" src="https://cdn.discordapp.com/attachments/1151516779068260435/1154092140570365972/edit.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
+ <tr align=center>
+    <td><img width="200px" src="https://cdn.discordapp.com/attachments/1151516779068260435/1154092255469109309/profile.png"  border="0" border="0" alt="1" /></td>
+    <td> <img width="200px" src="https://cdn.discordapp.com/attachments/1151516779068260435/1154092140570365972/edit.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
   </tr>
-   <tr>
+   <tr align=center>
     <td>Profile</td>
     <td>Edit profile</td>
   </tr>
 
- <tr>
-    <td><img width="350px" src="https://cdn.discordapp.com/attachments/1151516779068260435/1154094508074598501/my_recipe.png"  border="0" border="0" alt="1" /></td>
-    <td> <img width="350px" src="https://cdn.discordapp.com/attachments/1151516779068260435/1154092255217463440/like.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
+ <tr align=center>
+    <td><img width="200px" src="https://cdn.discordapp.com/attachments/1151516779068260435/1154094508074598501/my_recipe.png"  border="0" border="0" alt="1" /></td>
+    <td> <img width="200px" src="https://cdn.discordapp.com/attachments/1151516779068260435/1154092255217463440/like.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
   </tr>
-   <tr>
+   <tr align=center>
     <td>My Recipe</td>
     <td>Liked Recipe</td>
   </tr>
 
- <tr>
-    <td><img width="350px" src="https://cdn.discordapp.com/attachments/1151516779068260435/1154092255750131805/save.png"  border="0" border="0" alt="1" /></td>
-    <td> <img width="350px" src="https://cdn.discordapp.com/attachments/1151516779068260435/1154092256119226468/popular.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
+ <tr align=center>
+    <td><img width="200px" src="https://cdn.discordapp.com/attachments/1151516779068260435/1154092255750131805/save.png"  border="0" border="0" alt="1" /></td>
+    <td> <img width="200px" src="https://cdn.discordapp.com/attachments/1151516779068260435/1154092256119226468/popular.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
   </tr>
-   <tr>
+   <tr align=center>
     <td>Bookmark</td>
     <td>Popular menu</td>
   </tr>
 
- <tr>
-    <td><img width="350px" src="https://cdn.discordapp.com/attachments/1151516779068260435/1154092095993290792/detail.png"  border="0" border="0" alt="1" /></td>
-    <td> <img width="350px" src="https://cdn.discordapp.com/attachments/1151516779068260435/1154097133671153794/comment.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
+ <tr align=center>
+    <td><img width="200px" src="https://cdn.discordapp.com/attachments/1151516779068260435/1154092095993290792/detail.png"  border="0" border="0" alt="1" /></td>
+    <td> <img width="200px" src="https://cdn.discordapp.com/attachments/1151516779068260435/1154097133671153794/comment.png" \ border="0"  border="0"  border="0"  alt="2" /></td>
   </tr>
-   <tr>
+   <tr align=center>
     <td>Detail recipe</td>
     <td>Comment</td>
   </tr>
 
- <tr>
-    <td><img width="350px" src="https://cdn.discordapp.com/attachments/1151516779068260435/1154092254969991188/video.png"  border="0" border="0" alt="1" /></td>
+ <tr align=center>
+    <td><img width="200px" src="https://cdn.discordapp.com/attachments/1151516779068260435/1154092254969991188/video.png"  border="0" border="0" alt="1" /></td>
   </tr>
-   <tr>
+   <tr align=center>
     <td>Video player</td>
   </tr>
 

@@ -13,11 +13,11 @@ import { useDispatch, useSelector } from 'react-redux';
 const FirstRoute = () => {
     const route = useRoute();
     const { idRecipe } = route.params
-    const [data, setData] = useState([]);
+    const [datass, setDatass] = useState([]);
     const getRecipe = () => {
         axios.get(`https://food-recipe-be.vercel.app/recipes/${idRecipe}`)
             .then((res) => {
-                setData(res.data.data);
+                setDatass(res.data.data);
             })
             .catch((err) => {
                 console.log(err);
@@ -28,12 +28,14 @@ const FirstRoute = () => {
     }, [])
     return (
         <View style={{ flex: 1, backgroundColor: '#fff' }}>
-            {data.map(item => (
-                <View key={item.recipes_id} style={{ width: 319, backgroundColor: '#FAF7ED', marginTop: 20, marginLeft: 20, borderRadius: 15 }}>
-                    <Text style={{ width: 217, marginHorizontal: 40, marginVertical: 40, fontSize: 16 }}>
-                        {item.recipes_ingredients}
-                    </Text>
-                </View>
+            {datass.map(item => (
+                <ScrollView>
+                    <View key={item.recipes_id} style={{ width: 319, backgroundColor: '#FAF7ED', marginTop: 20, marginLeft: 20, borderRadius: 15 }}>
+                        <Text style={{ width: 217, marginHorizontal: 40, marginVertical: 40, fontSize: 16 }}>
+                            {item.recipes_ingredients}
+                        </Text>
+                    </View>
+                </ScrollView>
             ))}
         </View>
     )
@@ -110,7 +112,7 @@ const SecondRoute = () => {
                                 <Avatar mt={5} source={{ uri: item.users_photo }} />
                                 <View style={{ flexDirection: "column", marginLeft: 20 }}>
                                     <Text style={{ fontWeight: "700" }}>{item.users_name}</Text>
-                                    <Text>{item.comment_text}</Text>
+                                    <Text style={{width:270}}>{item.comment_text}</Text>
                                 </View>
                             </View>
                         ))}

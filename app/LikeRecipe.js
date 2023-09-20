@@ -17,7 +17,7 @@ const LikeRecipe = () => {
     }, [])
 
     const getData = () => {
-        axios.get(`http://192.168.18.6:7474/likeds`)
+        axios.get(`https://food-recipe-be.vercel.app/likeds`)
             .then((res) => {
                 setData(res.data.data);
             })
@@ -27,7 +27,7 @@ const LikeRecipe = () => {
     }
 
     const handleDelete = (likeds_id) => {
-        axios.delete(`http://192.168.18.6:7474/likeds/${likeds_id}`)
+        axios.delete(`https://food-recipe-be.vercel.app/likeds/${likeds_id}`)
             .then(() => {
                 alert('Unsave recipe')
                 getData();

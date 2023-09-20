@@ -17,7 +17,7 @@ const SaveRecipe = () => {
     }, [])
 
     const getData = () => {
-        axios.get(`http://192.168.18.6:7474/bookmarks`)
+        axios.get(`https://food-recipe-be.vercel.app/bookmarks`)
             .then((res) => {
                 setData(res.data.data);
             })
@@ -27,7 +27,7 @@ const SaveRecipe = () => {
     }
 
     const handleDelete = (bookmarks_id) => {
-        axios.delete(`http://192.168.18.6:7474/bookmarks/${bookmarks_id}`)
+        axios.delete(`https://food-recipe-be.vercel.app/bookmarks/${bookmarks_id}`)
             .then(() => {
                 alert('Unsave recipe')
                 getData();

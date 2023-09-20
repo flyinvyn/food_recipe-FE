@@ -32,7 +32,7 @@ const Login = () => {
 
     const submit = async () => {
         try {
-            const res = await axios.post(`http://192.168.18.6:7474/users/login`,{
+            const res = await axios.post(`https://food-recipe-be.vercel.app/users/login`,{
                 users_email,
                 users_confirmpassword
             });

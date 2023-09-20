@@ -24,7 +24,7 @@ const Register = () => {
             users_password,
             users_confirmpassword
         }
-        axios.post(`http://192.168.18.6:7474/users/register`, data)
+        axios.post(`https://food-recipe-be.vercel.app/users/register`, data)
             .then(() => {
                 alert('succes')
                 navigation.navigate('Auth/login')

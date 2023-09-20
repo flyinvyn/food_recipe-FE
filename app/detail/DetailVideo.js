@@ -20,7 +20,7 @@ const DetailVideo = () => {
 
     const getData = async () => {
         await axios
-            .get(`http://192.168.18.6:7474/recipes/${idRecipe}`)
+            .get(`https://food-recipe-be.vercel.app/recipes/${idRecipe}`)
             .then((response) => {
                 // setTitle(response.data.data[0].recipes_title);
                 const videoLink = response.data.data[0].recipes_video;

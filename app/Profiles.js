@@ -22,7 +22,7 @@ const Profile = () => {
 
     const getData = async () => {
         const users_id = await AsyncStorage.getItem('id')
-        axios.get(`http://192.168.18.6:7474/users/profile/${users_id}`)
+        axios.get(`https://food-recipe-be.vercel.app/users/profile/${users_id}`)
             .then((res) => {
                 setData(res.data.data);
             })

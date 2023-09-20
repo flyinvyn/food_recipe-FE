@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getAllRecipe = () => async (dispatch) => {
   try {
-    const recipes = await axios.get(`http://192.168.18.6:7474/recipes`);
+    const recipes = await axios.get(`https://food-recipe-be.vercel.app/recipes`);
     const result = recipes.data.data;
     dispatch({ type: "GET_ALL_RECIPE", payload: result });
   } catch (err) {
@@ -25,7 +25,7 @@ export const createRecipeActions =
             type: "image/jpeg"
           })
         }
-        const res = await axios.post("http://192.168.18.6:7474/recipes", formData,
+        const res = await axios.post("https://food-recipe-be.vercel.app/recipes", formData,
         {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -58,7 +58,7 @@ export const updateRecipeActions =
         });
       }
       const recipes = await axios.put(
-        `http://192.168.18.6:7474/recipes/${recipes_id}`,
+        `https://food-recipe-be.vercel.app/recipes/${recipes_id}`,
         formData,
         {
           headers: {
@@ -81,7 +81,7 @@ export const updateRecipeActions =
 export const deleteRecipeActions = (recipes_id) => async (dispatch) => {
   try {
     const recipes = await axios.delete(
-      `http://192.168.18.6:7474/recipes/${recipes_id}`
+      `https://food-recipe-be.vercel.app/recipes/${recipes_id}`
     );
     const result = recipes.data.data;
     dispatch({ type: "DELETE_RECIPE", payload: result });

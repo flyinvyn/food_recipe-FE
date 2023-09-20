@@ -53,7 +53,7 @@ const Home = () => {
     const getData = async () => {
         const dataUser = await AsyncStorage.getItem("id");
         await axios
-            .get(`http://192.168.18.6:7474/recipes/users/${dataUser}`)
+            .get(`https://food-recipe-be.vercel.app/recipes/users/${dataUser}`)
             .then((response) => {
                 setData(response.data.data);
             })

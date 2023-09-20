@@ -15,7 +15,7 @@ const FirstRoute = () => {
     const { idRecipe } = route.params
     const [data, setData] = useState([]);
     const getRecipe = () => {
-        axios.get(`http://192.168.18.6:7474/recipes/${idRecipe}`)
+        axios.get(`https://food-recipe-be.vercel.app/recipes/${idRecipe}`)
             .then((res) => {
                 setData(res.data.data);
             })
@@ -48,7 +48,7 @@ const SecondRoute = () => {
     // const [idUser, setIdUser] = useState('');
     const [datas, setData] = useState([]);
     const getComment = () => {
-        axios.get(`http://192.168.18.6:7474/comments`)
+        axios.get(`https://food-recipe-be.vercel.app/comments`)
             .then((res) => {
                 setData(res.data.data);
             })
@@ -138,7 +138,7 @@ const DetailRecipe = () => {
     const { idRecipe } = route.params
     const [data, setData] = useState([]);
     const getRecipe = () => {
-        axios.get(`http://192.168.18.6:7474/recipes/${idRecipe}`)
+        axios.get(`https://food-recipe-be.vercel.app/recipes/${idRecipe}`)
             .then((res) => {
                 setData(res.data.data);
             })
@@ -156,7 +156,7 @@ const DetailRecipe = () => {
             recipes_id: idRecipe,
             users_id: dataUser,
         };
-        axios.post("http://192.168.18.6:7474/likeds", data).then((res) => {
+        axios.post("https://food-recipe-be.vercel.app/likeds", data).then((res) => {
             if (res.data.statusCode === 201) {
                 alert("Like Recipe Success");
             } else if (res.data.message === "Like Already") {
@@ -172,7 +172,7 @@ const DetailRecipe = () => {
             users_id: dataUser,
         };
 
-        axios.post("http://192.168.18.6:7474/bookmarks", data).then((res) => {
+        axios.post("https://food-recipe-be.vercel.app/bookmarks", data).then((res) => {
             if (res.data.statusCode === 201) {
                 alert("Save Success");
             } else if (res.data.message === "Bookmarks Already") {

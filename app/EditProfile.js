@@ -37,7 +37,7 @@ const EditProfile = () => {
           type: "image/jpeg"
         })
       }
-      const res = await axios.put(`http://192.168.18.6:7474/users/profile/${users_id}`, formData,
+      const res = await axios.put(`https://food-recipe-be.vercel.app/users/profile/${users_id}`, formData,
       {
         headers: {
           "Content-Type": "multipart/form-data",

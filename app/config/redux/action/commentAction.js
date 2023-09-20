@@ -9,7 +9,7 @@ export const createCommentActions =
         users_id: dataUser,
       };
       const comments = await axios.post(
-        "http://192.168.18.6:7474/comments",
+        "https://food-recipe-be.vercel.app/comments",
         data
       );
       if (comments.data.statusCode === 201) {
@@ -25,7 +25,7 @@ export const createCommentActions =
 
 export const getUserCommentActions = (id) => async (dispatch) => {
   try {
-    const comments = await axios.get(`http://192.168.18.6:7474/comments/${id}`);
+    const comments = await axios.get(`https://food-recipe-be.vercel.app/comments/${id}`);
     const result = comments.data.data;
     dispatch({ type: "GET_ALL_COMMENT", payload: result });
   } catch (err) {

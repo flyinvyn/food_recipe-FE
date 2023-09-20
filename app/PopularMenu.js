@@ -34,7 +34,7 @@ const PopularMenu = () => {
         getData()
     }, [])
     const getData = () => {
-        axios.get(`http://192.168.18.6:7474/recipes`)
+        axios.get(`https://food-recipe-be.vercel.app/recipes`)
             .then((res) => {
                 setData(res.data.data);
             })
